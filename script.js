@@ -3,11 +3,11 @@
 const button = document.getElementById("button");
 const input = document.getElementById("input");
 const toDoList = document.getElementById("actualToDoList");
-const removeBtn = document.getElementById("removeBtn");
+const removeBtn = document.getElementById("removeButton");
 
 button.addEventListener("click", function (e) {
   e.preventDefault();
-  let listOfInformation = document.createElement("p");
+  let listOfInformation = document.createElement("li");
   listOfInformation.textContent = input.value;
   toDoList.appendChild(listOfInformation);
   input.value = "";
@@ -16,6 +16,7 @@ button.addEventListener("click", function (e) {
     listOfInformation.style.textDecoration = "line-through";
   });
   removeBtn.addEventListener("click", function () {
-    toDoList.removeChild(listOfInformation);
+ 
+    toDoList.removeChild(listOfInformation)
   });
 });
