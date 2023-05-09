@@ -18,18 +18,21 @@ h2 {
   justify-content: center;
 }
 
-.theButtonInputRemove {
+.theButtonInput {
   display: flex;
   justify-content: center;
   margin-top: 50px;
 }
 
-#actualToDoList {
-  margin-top: 50px;
+.containerOfEachTask{
+  display: flex;
+  justify-content: center;
+  margin-top:1px;
   font-size: 20px;
 }
 
-p {
+.removeButton{
+  margin-top: 1px;
   display: flex;
-  justify-content: center;
+  align-self:center;
 }
