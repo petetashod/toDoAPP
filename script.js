@@ -8,7 +8,7 @@ button.addEventListener("click", function (e) {
   let listOfInformation = document.createElement("div");
   listOfInformation.className = "containerOfEachTask";
   let pElement = document.createElement("p");
-  pElement.className = "lineThrough";
+  pElement.style.textDecoration = "none";
   pElement.textContent = input.value;
   listOfInformation.appendChild(pElement);
   let removeButton = document.createElement("button");
@@ -18,12 +18,12 @@ button.addEventListener("click", function (e) {
   listOfInformation.appendChild(removeButton);
   input.value = "";
   pElement.addEventListener("click", function (e) {
-  
-   if(e.target.tagName === "p"  ){
-    e.target.classList.toggle("lineThrough");
-   }
-   
-    
+    e.preventDefault();
+    if (e.target.style.textDecoration === "none") {
+      e.target.style.textDecoration ="line-through";
+    } else if (e.target.style.textDecoration === "line-through"){
+      e.target.style.textDecoration = "none"
+    }
   });
   removeButton.addEventListener("click", function removeItems() {
     task.remove();
